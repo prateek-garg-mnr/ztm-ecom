@@ -12,6 +12,12 @@ var firebaseConfig = {
 	measurementId: "G-8KSZ0ZZB7Z",
 };
 
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
 // save auth user to db
 export const createUserProfileDocument = async (userAuth, additionalData) => {
 	// return if user is not logged in
@@ -35,14 +41,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 	// return user reference
 	return userRef
 };
-
-// initialize firebase
-firebase.initializeApp(firebaseConfig);
-
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-
-
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });

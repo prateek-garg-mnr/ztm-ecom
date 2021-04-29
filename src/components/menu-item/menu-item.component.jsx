@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "./menu-item.styles.scss";
 function MenuItems({ title, imageUrl, size, match, linkUrl, history }) {
-	console.log(match);
 	return (
 		<div
 			style={{ backgroundImage: `url(${imageUrl})` }}
